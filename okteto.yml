@@ -2,9 +2,6 @@ build:
   todo-list:
     image: okteto.dev/todo-list:1.0.0
     context: .
-  todo-list-dev:
-    context: .
-    target: builder
 
 deploy:
   - cd manifests; kustomize edit set image okteto.dev/todo-list=${OKTETO_BUILD_TODO_LIST_IMAGE}
